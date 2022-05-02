@@ -7,7 +7,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-from selenium.webdriver.chrome.options import Options;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class UITest 
