@@ -23,12 +23,13 @@ public class UITest
 		if(browserName.contains("Chrome"))
 		{
 			WebDriverManager.chromedriver().setup();
-			chrome_options = Options();
-			chrome_options.add_argument("--disable-extensions");
-			chrome_options.add_argument("--disable-gpu");
-			chrome_options.add_argument("--no-sandbox");
-			options.add_argument("--disable-dev-shm-usage");
-			driver=new ChromeDriver(options=chrome_options);
+			ChromeOptions options = new ChromeOptions();
+			options.setExperimentalOption("prefs", chromePrefs);
+			options.addArguments("--no-sandbox");
+			options.addArguments("--headless"); //!!!should be enabled for Jenkins
+			options.addArguments("--disable-dev-shm-usage"); //!!!should be enabled for Jenkins
+			options.addArguments("--window-size=1920x1080"); //!!!should be enabled for Jenkins
+			driver = new ChromeDriver(options);
 		}
 		else if(browserName.contains("Edge"))
 		{
