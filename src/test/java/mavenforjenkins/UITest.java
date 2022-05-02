@@ -22,6 +22,8 @@ public class UITest
 		if(browserName.contains("Chrome"))
 		{
 			WebDriverManager.chromedriver().setup();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--disable-dev-shm-usage");
 			 driver=new ChromeDriver();
 		}
 		else if(browserName.contains("Edge"))
